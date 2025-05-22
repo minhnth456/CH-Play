@@ -1,4 +1,4 @@
-import { ScrollView, View } from 'react-native';
+import { Dimensions, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useEffect, useState } from 'react';
 import HeaderNavigate from '../components/HeaderNavigate';
@@ -12,6 +12,8 @@ import AboutGame from '../components/DetailScreen/AboutGame';
 import SecurityGame from '../components/DetailScreen/SecurityGame';
 import RankingGame from '../components/DetailScreen/RankingGame';
 
+const screenWidth = Dimensions.get('window').width;
+
 export default function DetailScreen({ navigation }: { navigation: any }) {
     const [numberLine, setNumberLine] = useState<string>('');
 
@@ -21,16 +23,16 @@ export default function DetailScreen({ navigation }: { navigation: any }) {
         setData(route.params as IData);
     }, [route.params]);
 
-    console.log('Data navigation detail: ', data);
+    // console.log('Data navigation detail: ', data);
 
     return (
-        <View className="bg-black flex-1">
+        <View style={styles.viewContainer}>
             <SafeAreaView>
                 {data && (
                     <ScrollView>
-                        <HeaderNavigate navigation={navigation} className="px-4 py-2" moreAction={true} />
+                        <HeaderNavigate style={styles.headerNavigate} navigation={navigation} moreAction={true} />
                         <View className="BODY">
-                            <View className={`DETAIL_APP flex w-screen gap-y-4`}>
+                            <View style={styles.detailApp} className={`DETAIL_APP`}>
                                 {/* HeaderGame  */}
                                 <HeaderGame data={data} />
 
@@ -47,12 +49,12 @@ export default function DetailScreen({ navigation }: { navigation: any }) {
                                 <RankingGame />
 
                                 {/* Comments  */}
-                                <View className="COMMENTS px-6 gap-y-12">
+                                <View style={styles.comments} className="COMMENTS">
                                     <UserComments data={data.comments} numberLine={numberLine} setNumberLine={setNumberLine} />
                                 </View>
 
-                                <View className="SUPPORT px-6">
-                                    <TitleWithArrow title="Hỗ trợ ứng dụng" icon="chevron-down" className="py-4" />
+                                <View style={styles.support} className="SUPPORT">
+                                    <TitleWithArrow style={styles.title} title="Hỗ trợ ứng dụng" icon="chevron-down" />
                                 </View>
 
                             </View>
@@ -64,3 +66,35 @@ export default function DetailScreen({ navigation }: { navigation: any }) {
         </View >
     );
 }
+
+export const styles = StyleSheet.create({
+    viewContainer: {
+        display: 'flex',
+        flex: 1,
+        backgroundColor: '#000',
+    },
+    headerNavigate: {
+        paddingLeft: 16,
+        paddingRight: 16,
+        paddingTop: 8,
+        paddingBottom: 8,
+    },
+    detailApp: {
+        display: 'flex',
+        width: screenWidth,
+        rowGap: 16,
+    },
+    comments: {
+        paddingLeft: 24,
+        paddingRight: 24,
+        rowGap: 48,
+    },
+    support: {
+        paddingLeft: 24,
+        paddingRight: 24,
+    },
+    title: {
+        paddingTop: 16,
+        paddingBottom: 16,
+    },
+})

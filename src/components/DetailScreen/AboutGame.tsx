@@ -1,6 +1,6 @@
 import { Text, View } from 'react-native';
 import TitleWithArrow from '../TitleWithArrow';
-import TagGame from './TagGame';
+import TagGame from '../TagGame';
 import { IData } from '../../interfaces/product';
 
 export default function AboutGame({ data }: { data: IData }) {

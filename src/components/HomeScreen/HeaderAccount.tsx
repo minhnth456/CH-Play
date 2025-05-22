@@ -1,81 +1,107 @@
-import { Animated, Dimensions, Image, Modal, Pressable, Text, View } from 'react-native';
+import { Animated, Dimensions, Image, Modal, Pressable, Text, View, StyleSheet } from 'react-native';
 import PressItems from '../PressItems';
 import MIcon from 'react-native-vector-icons/MaterialIcons';
 import FIcon from 'react-native-vector-icons/Feather';
 import ADIcon from 'react-native-vector-icons/AntDesign';
 import { useState } from 'react';
-import { useAuth } from '../../Contexts/AuthContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { logOut } from '../../reducers/authSlice';
 
 const screenWidth = Dimensions.get('window').width;
 
 export default function HeaderAccount({ navigation }: any) {
-    const { logoutUser } = useAuth();
+    const user = useSelector((state: any) => state.auth.user);
+    const dispatch = useDispatch();
     //Modal Account
     const [visiableAccount, setVisiableAccount] = useState<boolean>(false);
+    //Quantity card
+    const products = useSelector((state: any) => state.cart.products);
+
+    const viewAnimation = (pressed: any) => ({
+        borderRadius: 9999,
+        backgroundColor: pressed ? ' #374151' : 'transparent',
+        padding: 8,
+    });
+
+    const viewAnimation2 = (pressed: any) => ({
+        borderRadius: 9999,
+        backgroundColor: pressed ? ' #374151' : 'transparent',
+        padding: 8,
+    });
+
     return (
-        <View className="Header1 flex flex-row justify-between items-center px-4">
+        <View style={styles.header1}>
             <View className="LOGO">
-                <Image className="w-10 h-10" source={require('../../assets/ch-play.png')} />
+                <Image style={styles.logo} source={require('../../assets/ch-play.png')} />
             </View>
-            <View className="ACCOUNT flex flex-row gap-x-2 justify-between items-center">
+            <View style={styles.account} className="ACCOUNT">
+                <View className="CART">
+                    <PressItems style={styles.pressItems} navigation={navigation} navigationTo="Cart">
+                        {products?.length > 0
+                            ?
+                            <>
+                                <FIcon name="shopping-cart" size={20} color="#FFF" />
+                                <View style={styles.redCirleCart}>
+                                    <Text style={styles.textCirle}>{products?.length}</Text>
+                                </View>
+                            </>
+                            :
+                            <>
+                                <FIcon name="shopping-cart" size={20} color="#FFF" />
+                            </>
+                        }
+
+                    </PressItems>
+                </View>
                 <View className="NOTIFI">
-                    <PressItems className="rounded-full p-2" navigation={navigation} navigationTo="Notifi">
+                    <PressItems style={styles.pressItems} navigation={navigation} navigationTo="Notifi">
                         <>
                             <MIcon name="notifications-none" size={26} color="#FFF" />
-                            <View className="absolute top-1 right-1 bg-red-500 rounded-full w-5 h-5">
-                                <Text className="text-white text-[12px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">5</Text>
+                            <View style={styles.redCirle}>
+                                <Text style={styles.textCirle}>1</Text>
                             </View>
                         </>
                     </PressItems>
                 </View>
-
-                <Pressable onPress={() => setVisiableAccount(true)}>
-                    {({ pressed }) => (
-                        <Animated.View style={{ borderRadius: 9999, backgroundColor: pressed ? '#374151' : 'transparent', padding: 8 }}>
-                            <View className="ACC bg-green-500 rounded-full w-8 h-8 flex justify-center items-center">
-                                <Text className="text-white text-lg">M</Text>
-                            </View>
-                        </Animated.View>
-                    )}
-                </Pressable>
+                <PressItems className='p-2 rounded-full' onScale action={() => setVisiableAccount(true)}>
+                    <Image className='w-8 h-8 rounded-full' source={{ uri: user.avatar }} />
+                </PressItems>
                 <Modal
                     visible={visiableAccount}
                     transparent={true}
                     animationType="fade"
                     onRequestClose={() => setVisiableAccount(false)}
                 >
-                    <View style={{ backgroundColor: '#00000090' }} className="flex flex-1 justify-end items-center">
-                        <View style={{ width: screenWidth * 11 / 12 }} className={`rounded-tl-3xl rounded-tr-3xl flex bg-zinc-800 px-2 py-2`}>
-                            <View className="flex flex-row justify-center items-center">
+                    <View style={styles.modalContainer}>
+                        <View style={styles.bgModel}>
+                            <View style={styles.rowCenter}>
                                 <Pressable onPress={() => setVisiableAccount(false)}>
                                     {({ pressed }) => (
-                                        <Animated.View style={{ backgroundColor: pressed ? '#374151' : 'transparent', padding: 4, borderRadius: 9999 }}>
+                                        <Animated.View style={viewAnimation2(pressed)}>
                                             <FIcon name="x" size={22} color="#FFFFFF" />
                                         </Animated.View>
                                     )}
                                 </Pressable>
-                                <Text className="text-white grow text-center text-xl font-bold">Google</Text>
-                                <View className="w-8 p-4" />
+                                <Text style={styles.google}>Google</Text>
+                                <View style={styles.emptySpace} />
                             </View>
-                            <View className="mt-6">
-                                <View className="rounded-tl-3xl rounded-tr-3xl bg-zinc-900 w-full px-2 py-4">
-                                    <View className="flex flex-row gap-x-4">
-                                        <View className="ACC bg-green-500 rounded-full w-12 h-12 flex justify-center items-center">
-                                            <Text className="text-white text-2xl">M</Text>
-                                        </View>
-                                        <View className="grow flex flex-col gap-y-4">
-                                            <View className="flex gap-y-1">
-                                                <Text className="text-white">Minh Hoàng</Text>
-                                                <Text className="text-gray-400 text-xs">minhnth456@gmail.com</Text>
+                            <View style={styles.mT}>
+                                <View style={styles.smallContainerModal}>
+                                    <View style={styles.rowGapX4}>
+                                        <Image className='w-14 h-14 rounded-full' source={{ uri: user.avatar }} />
+                                        <View style={styles.colGrowGapY4}>
+                                            <View style={styles.flexGapY1}>
+                                                <Text style={styles.textWhite}>Minh Hoàng</Text>
+                                                <Text style={styles.textGrayXS}>{user.email}</Text>
                                             </View>
-                                            <View className="flex flex-row">
-                                                <Pressable onPress={() => logoutUser()}>
-                                                    <Text style={{ borderColor: '#374151' }} className="text-white border-[1px] px-4 py-2 rounded-lg">Đăng xuất</Text>
+                                            <View style={styles.flexRow}>
+                                                <Pressable onPress={() => dispatch(logOut())}>
+                                                    <Text style={styles.textPressable}>Đăng xuất</Text>
                                                 </Pressable>
                                             </View>
                                         </View>
-                                        <View className="flex items-center">
-                                            <View style={{ borderWidth: 2, borderColor: '#374151', borderRadius: 9999 }} className="p-[6px]">
+                                        <View style={styles.flexItemCenter}>
+                                            <View style={styles.accMoreOption}>
                                                 <ADIcon name="caretdown" size={14} color="#FFFFFF" />
                                             </View>
                                         </View>
@@ -90,3 +116,171 @@ export default function HeaderAccount({ navigation }: any) {
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    accMoreOption: {
+        borderWidth: 2,
+        borderColor: '#374151',
+        borderRadius: 9999,
+        padding: 6,
+    },
+    flexItemCenter: {
+        display: 'flex',
+        alignItems: 'center',
+    },
+    textPressable: {
+        backgroundColor: '#374151',
+        color: '#fff',
+        borderWidth: 1,
+        paddingHorizontal: 16,
+        paddingVertical: 8,
+        borderRadius: 8,
+    },
+    flexRow: {
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    textGrayXS: {
+        color: '#9ca3af',
+        fontSize: 12,
+        lineHeight: 16,
+    },
+    textWhite: {
+        color: '#fff',
+    },
+    flexGapY1: {
+        display: 'flex',
+        rowGap: 4,
+    },
+    colGrowGapY4: {
+        flexGrow: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        rowGap: 16,
+    },
+    textWhite2XL: {
+        color: '#fff',
+        fontSize: 24,
+        lineHeight: 32,
+    },
+    ACC: {
+        backgroundColor: '#22c55e',
+        borderRadius: 9999,
+        width: 48,
+        height: 48,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    rowGapX4: {
+        display: 'flex',
+        flexDirection: 'row',
+        columnGap: 16,
+    },
+    smallContainerModal: {
+        borderTopLeftRadius: 24,
+        borderTopRightRadius: 24,
+        backgroundColor: '#18181b',
+        width: '100%',
+        paddingHorizontal: 8,
+        paddingVertical: 16,
+    },
+    mT: {
+        marginTop: 24,
+    },
+    emptySpace: {
+        width: 32,
+        padding: 16,
+    },
+    google: {
+        color: '#fff',
+        flexGrow: 1,
+        textAlign: 'center',
+        fontSize: 20,
+        lineHeight: 28,
+        fontWeight: 700,
+    },
+    rowCenter: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    bgModel: {
+        width: screenWidth * 11 / 12,
+        borderTopLeftRadius: 24,
+        borderTopRightRadius: 24,
+        display: 'flex',
+        backgroundColor: '#27272a',
+        padding: 8,
+    },
+    modalContainer: {
+        display: 'flex',
+        flex: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        backgroundColor: '#00000090',
+    },
+    header1: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 16,
+    },
+    logo: {
+        width: 40,
+        height: 40,
+    },
+    account: {
+        display: 'flex',
+        flexDirection: 'row',
+        columnGap: 4,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    pressItems: {
+        borderRadius: 9999,
+        padding: 8,
+    },
+    redCirle: {
+        position: 'absolute',
+        top: 4,
+        right: 4,
+        backgroundColor: '#ef4444',
+        borderRadius: 9999,
+        width: 20,
+        height: 20,
+    },
+    redCirleCart: {
+        position: 'absolute',
+        top: 1,
+        right: -6,
+        backgroundColor: '#ef4444',
+        borderRadius: 9999,
+        width: 20,
+        height: 20,
+    },
+    textCirle: {
+        color: '#fff',
+        fontSize: 12,
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: [{ translateX: '-50%' }, { translateY: '-50%' }],
+    },
+    bgAccount: {
+        backgroundColor: '#22c55e',
+        borderRadius: 9999,
+        width: 32,
+        height: 32,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    textWhiteLG: {
+        color: '#fff',
+        fontSize: 18,
+        lineHeight: 28,
+    },
+})

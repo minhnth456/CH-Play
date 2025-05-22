@@ -1,22 +1,8 @@
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { Animated, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { RefObject } from '../../interfaces/product';
 
-interface RefObject {
-    current: {
-        measure: (
-            callback: (
-                fx: number,
-                fy: number,
-                width: number,
-                height: number,
-                px: number,
-                py: number
-            ) => void
-        ) => void;
-    } | null;
-}
-
-export default function HeaderNav({ setSelectNav }: { setSelectNav: (title: string) => void }) {
+export default function HeaderNav({ selectNav, setSelectNav }: { selectNav: string, setSelectNav: (title: string) => void }) {
     const scrollX = useRef(0);
 
     const choBanRef = useRef(null);
@@ -28,33 +14,61 @@ export default function HeaderNav({ setSelectNav }: { setSelectNav: (title: stri
     const Positon = useRef(new Animated.Value(0)).current;
     const widthAni = useRef(new Animated.Value(65)).current;
 
-    const moveUnderLine = (ref: RefObject, offset = 0): void => {
+    const navrowAnimation = {
+        width: widthAni,
+        transform: [{ translateX: Positon }],
+    };
+
+    const changeBgColor = (pressed: any) => ({
+        backgroundColor: pressed ? '#DDDDDD' : 'transparent',
+    });
+
+    const refMap = {
+        'FOR_YOU': choBanRef,
+        'BANG_XEP_HANG': bangXepHangRef,
+        'TRE_EM': treEmRef,
+        'CO_TINH_PHI': coTinhPhiRef,
+        'OPTIONS': sachMoiRef,
+    };
+
+    const offsetMap = {
+        'FOR_YOU': -5,
+        'BANG_XEP_HANG': 0,
+        'TRE_EM': 0,
+        'CO_TINH_PHI': 0,
+        'OPTIONS': 0,
+    };
+
+    const moveUnderLine = useCallback((ref: RefObject, offset = 0): void => {
         ref.current?.measure((fx, fy, width, height, px, _py) => {
-            console.log('width', width);
+            // console.log('width', width);
             const centerX = px + scrollX.current + offset;
-            console.log('centerX', centerX);
+            // console.log('centerX', centerX);
+
+            Animated.timing(widthAni, {
+                toValue: width - 18 - offset * 2,
+                duration: 100,
+                useNativeDriver: true,
+            }).start();
 
             Animated.timing(Positon, {
                 toValue: centerX,
                 duration: 300,
-                useNativeDriver: false,
+                useNativeDriver: true,
             }).start();
 
-            Animated.timing(widthAni, {
-                toValue: width - 18 - offset * 2,
-                duration: 300,
-                useNativeDriver: false,
-            }).start();
         });
+    }, [Positon, widthAni]);
+    const handleSetNav = (title: string) => {
+        if (selectNav !== title) {
+            setSelectNav(title);
+            moveUnderLine(refMap[title], offsetMap[title]);
+        }
     };
 
-    const handleChangeSelectNav = (title: string) => {
-        setSelectNav(title);
-    }
-
     return (
-        <View className="Header2 pt-4">
-            <View className="NAV-Container pl-2 relative">
+        <View style={styles.viewContainer} className="Header2">
+            <View style={styles.navContainer} className="NAV-Container">
                 <ScrollView
                     // ref={scrollRef}
                     horizontal
@@ -64,59 +78,86 @@ export default function HeaderNav({ setSelectNav }: { setSelectNav: (title: stri
                     }}
                     scrollEventThrottle={16}
                 >
-                    <Pressable ref={choBanRef} onPress={() => { moveUnderLine(choBanRef, -5); handleChangeSelectNav('FOR_YOU'); }} >
+                    <Pressable ref={choBanRef} onPress={() => { handleSetNav('FOR_YOU'); }} >
                         {({ pressed }) => (
-                            <View className="px-1 pt-2 pb-4" style={{ backgroundColor: pressed ? '#DDDDDD' : 'transparent' }}>
-                                <Text className="text-white px-1">Cho bạn</Text>
+                            <View style={[styles.viewPx1, changeBgColor(pressed)]}>
+                                <Text style={styles.textWhitePx1}>Cho bạn</Text>
                             </View>
                         )}
                     </Pressable>
-                    <Pressable ref={bangXepHangRef} onPress={() => { moveUnderLine(bangXepHangRef); handleChangeSelectNav('BXH'); }} >
+                    <Pressable ref={bangXepHangRef} onPress={() => { handleSetNav('BANG_XEP_HANG'); }} >
                         {({ pressed }) => (
-                            <View className="px-2 pt-2 pb-4" style={{ backgroundColor: pressed ? '#DDDDDD' : 'transparent' }}>
-                                <Text className="text-white px-2">Bảng xếp hạng</Text>
+                            <View style={[changeBgColor(pressed), styles.viewPx2]}>
+                                <Text style={styles.textWhitePx2}>Bảng xếp hạng</Text>
                             </View>
                         )}
                     </Pressable>
-                    <Pressable ref={treEmRef} onPress={() => { moveUnderLine(treEmRef); handleChangeSelectNav('TRE_EM'); }}>
+                    <Pressable ref={treEmRef} onPress={() => { handleSetNav('TRE_EM'); }}>
                         {({ pressed }) => (
-                            <View className="px-2 pt-2 pb-4" style={{ backgroundColor: pressed ? '#DDDDDD' : 'transparent' }}>
-                                <Text className="text-white px-2">Trẻ em</Text>
+                            <View style={[changeBgColor(pressed), styles.viewPx2]}>
+                                <Text style={styles.textWhitePx2}>Trẻ em</Text>
                             </View>
                         )}
                     </Pressable>
-                    <Pressable ref={coTinhPhiRef} onPress={() => { moveUnderLine(coTinhPhiRef); handleChangeSelectNav('CTP'); }}>
+                    <Pressable ref={coTinhPhiRef} onPress={() => { handleSetNav('CO_TINH_PHI'); }}>
                         {({ pressed }) => (
-                            <View className="px-2 pt-2 pb-4" style={{ backgroundColor: pressed ? '#DDDDDD' : 'tranparent' }}>
-                                <Text className="text-white px-2">Có tính phí</Text>
+                            <View style={[changeBgColor(pressed), styles.viewPx2,]}>
+                                <Text style={styles.textWhitePx2}>Có tính phí</Text>
                             </View>
                         )}
                     </Pressable>
-                    <Pressable ref={sachMoiRef} onPress={() => { moveUnderLine(sachMoiRef); handleChangeSelectNav('SACH_MOI'); }}>
+                    <Pressable ref={sachMoiRef} onPress={() => { handleSetNav('OPTIONS'); }}>
                         {({ pressed }) => (
-                            <View className="px-2 pt-2 pb-4" style={{ backgroundColor: pressed ? '#DDDDDD' : 'transparent' }}>
-                                <Text className="text-white px-2">Sách mới</Text>
+                            <View style={[changeBgColor(pressed), styles.viewPx2]}>
+                                <Text style={styles.textWhitePx2}>Loại</Text>
                             </View>
                         )}
                     </Pressable>
                     <Animated.View style={[
                         styles.navrow,
-                        {
-                            transform: [{ translateX: Positon }],
-                            width: widthAni,
-                        }]}
+                        navrowAnimation,
+                    ]}
                     >
                         {/* <View className={`NAV-ROW absolute h-1 w-8 bottom-0 bg-red-500 rounded-tl-sm rounded-tr-sm`}></View> */}
                     </Animated.View>
                 </ScrollView>
 
             </View>
-            <View className="NAV-BOTTOM h-[2px] bg-gray-500" />
+            <View style={styles.navBottom} />
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    navBottom: {
+        height: 2,
+        backgroundColor: '#6b7280',
+    },
+    viewPx1: {
+        paddingHorizontal: 4,
+        paddingTop: 8,
+        paddingBottom: 16,
+    },
+    viewPx2: {
+        paddingHorizontal: 8,
+        paddingTop: 8,
+        paddingBottom: 16,
+    },
+    navContainer: {
+        paddingLeft: 8,
+        position: 'relative',
+    },
+    viewContainer: {
+        paddingTop: 16,
+    },
+    textWhitePx1: {
+        color: '#fff',
+        paddingHorizontal: 4,
+    },
+    textWhitePx2: {
+        color: '#fff',
+        paddingHorizontal: 8,
+    },
     navrow: {
         position: 'absolute',
         height: 4,
@@ -125,4 +166,4 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 5,
         borderTopRightRadius: 5,
     },
-});
+})

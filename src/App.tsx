@@ -13,17 +13,19 @@ import RootNavigator from './navigations/RootNavigator';
 import { ThemeProvider } from 'react-native-elements';
 import { StatusBar } from 'react-native';
 import Toast from 'react-native-toast-message';
-import { AuthContextProvider } from './Contexts/AuthContext';
-
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 function App(): React.JSX.Element {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={'light-content'} backgroundColor={'transparent'} translucent />
       <ThemeProvider>
-        <AuthContextProvider>
+        {/* <AuthContextProvider> */}
+        <Provider store={store}>
           <RootNavigator />
-        </AuthContextProvider>
+        </Provider>
+        {/* </AuthContextProvider> */}
       </ThemeProvider>
       <Toast />
     </SafeAreaProvider >

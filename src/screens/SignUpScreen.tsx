@@ -3,8 +3,8 @@ import { Controller, useForm } from 'react-hook-form';
 import { Animated, Dimensions, Image, Keyboard, KeyboardAvoidingView, Platform, Pressable, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import PressItems from '../components/PressItems';
-import axios from 'axios';
-import Toast from 'react-native-toast-message';
+import { useAppDispatch } from '../store/store';
+import { signUp } from '../reducers/authSlice';
 
 const screenWidth = Dimensions.get('window').width;
 
@@ -14,6 +14,8 @@ export default function SignUpScreen({ navigation }: { navigation: any }) {
     const emailLine = useRef(new Animated.Value(0)).current;
     const passwordLine = useRef(new Animated.Value(0)).current;
     const confirmPasswordLine = useRef(new Animated.Value(0)).current;
+
+    const dispatch = useAppDispatch();
 
     const hanleFocus = (inputLine: any) => {
         Animated.timing(inputLine, {
@@ -34,27 +36,7 @@ export default function SignUpScreen({ navigation }: { navigation: any }) {
     const onSubmit = async (value: any) => {
         Keyboard.dismiss();
         console.log(value);
-        try {
-            const response = await axios.post(`http://192.168.10.5:3000/signup`, { ...value, confirmPassword: '' });
-            if (response.status === 201) {
-                Toast.show({
-                    type: 'success',
-                    text1: 'Thành công',
-                    text2: 'Bạn đã đăng ký thành công 👋',
-                });
-                console.log(response.data);
-                setTimeout(() => navigation.navigate('SignIn'), 2000);
-                return response.data;
-            }
-        } catch (error) {
-            console.log('Lỗi khi đăng ký', error);
-            Toast.show({
-                type: 'error',
-                text1: 'Thất bại',
-                text2: 'Lỗi khi đăng ký',
-            });
-        }
-
+        dispatch(signUp({ ...value, cartId: null, avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s' }));
     };
 
     return (

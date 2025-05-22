@@ -1,9 +1,26 @@
 import FIcon from 'react-native-vector-icons/Feather';
 import EIcon from 'react-native-vector-icons/Entypo';
-import { Animated, Pressable, Text, View } from 'react-native';
+import { Animated, Pressable, StyleSheet, Text, View } from 'react-native';
 
 
-const HeaderNavigate = ({ className, title, navigation, moreAction }: { className?: string, title?: string, navigation: any, moreAction?: boolean }) => {
+const HeaderNavigate = ({ className, style, title, navigation, moreAction }: { className?: string, style?: any, title?: string, navigation: any, moreAction?: boolean }) => {
+    const styles = StyleSheet.create({
+        header: {
+            ...style,
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+
+        },
+        textWhite: {
+            color: '#fff',
+            flexGrow: 1,
+            fontSize: 22,
+            paddingLeft: 16,
+        },
+    });
+
     const getButtonStyle = (pressed: boolean) => ({
         width: 30,
         height: 30,
@@ -19,17 +36,17 @@ const HeaderNavigate = ({ className, title, navigation, moreAction }: { classNam
     };
 
     return (
-        <View className={`HEADER flex flex-row justify-between items-center ${className}`}>
+        <View style={styles.header} className={`HEADER ${className}`}>
             <Pressable
                 onPress={() => hanldeNavigate()}
             >
                 {({ pressed }) => (
                     <Animated.View style={getButtonStyle(pressed)}>
-                        <FIcon name="arrow-left" size={24} color="#9ca3af" />
+                        <FIcon name="arrow-left" size={24} color="#fff" />
                     </Animated.View>
                 )}
             </Pressable>
-            <Text className="text-white grow text-[22px] pl-4">{title}</Text>
+            <Text style={styles.textWhite}>{title}</Text>
             {moreAction
                 ?
                 <Pressable>
@@ -44,5 +61,4 @@ const HeaderNavigate = ({ className, title, navigation, moreAction }: { classNam
         </View>
     );
 };
-
 export default HeaderNavigate;

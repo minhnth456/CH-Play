@@ -1,10 +1,11 @@
 import { Pressable, Text, View } from 'react-native';
 
-const TagGame = ({ title, className }: { title: string, className?: string }) => {
+const TagGame = ({ title, className, style }: { title: string, className?: string, style?: any }) => {
     const getTagStyle = (pressed: boolean) => ({
         borderWidth: 1,
         borderColor: '#374151',
         backgroundColor: pressed ? '#374151' : 'transparent',
+        ...style,
     });
     return (
         <Pressable

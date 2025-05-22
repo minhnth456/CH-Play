@@ -24,3 +24,18 @@ export interface IData {
     tags: string[],
     comments: IComments[]
 }
+
+export interface RefObject {
+    current: {
+        measure: (
+            callback: (
+                fx: number,
+                fy: number,
+                width: number,
+                height: number,
+                px: number,
+                py: number
+            ) => void
+        ) => void;
+    } | null;
+}

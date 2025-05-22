@@ -2,13 +2,14 @@ import React, { useRef } from 'react';
 import { Animated, Pressable } from 'react-native';
 import { IData } from '../interfaces/product';
 
-type Props = { children: React.JSX.Element, className?: string, onScale?: boolean, navigation?: any, navigationTo?: string, itemNavigation?: IData }
+type Props = { children: React.JSX.Element, className?: string, onScale?: boolean, navigation?: any, navigationTo?: string, itemNavigation?: IData, style?: any, action?: any }
 
-const PressItems = ({ children, className, onScale, navigation, navigationTo, itemNavigation }: Props) => {
+const PressItems = ({ children, className, onScale, navigation, navigationTo, itemNavigation, style, action }: Props) => {
     const scaleAnimation = useRef(new Animated.Value(1)).current;
     const getViewStyle = (pressed: boolean) => ({
         backgroundColor: pressed ? '#374151' : 'transparent',
         transform: [{ scale: scaleAnimation }],
+        ...style,
     });
 
     const handlePressIn = () => {
@@ -34,10 +35,11 @@ const PressItems = ({ children, className, onScale, navigation, navigationTo, it
             navigation.navigate(navigationTo);
         }
     };
-
     return (
         <Pressable
-            onPress={() => { if (navigationTo) { hanldeNavigate(); } }}
+            onPress={
+                navigationTo ? hanldeNavigate : action
+            }
             onPressIn={() => { if (onScale) { handlePressIn(); } }}
             onPressOut={() => { if (onScale) { handlePressOut(); } }}
         >
@@ -46,7 +48,7 @@ const PressItems = ({ children, className, onScale, navigation, navigationTo, it
                     {children}
                 </Animated.View>
             )}
-        </Pressable>
+        </Pressable >
     );
 };
 

@@ -1,65 +1,77 @@
-import { Dimensions, Image, Pressable, ScrollView, Text, TouchableHighlight, View } from 'react-native';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { Dimensions, Image, Pressable, ScrollView, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import ADIcon from 'react-native-vector-icons/AntDesign';
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FIcon from 'react-native-vector-icons/Feather';
 import { Modal } from 'react-native';
 import { IData } from '../../interfaces/product';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useAppDispatch } from '../../store/store';
+import { addToCart } from '../../reducers/cartSlice';
+import { useSelector } from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const screenWidth = Dimensions.get('window').width;
 
 export default function HeaderGame({ data }: { data: IData }) {
     const [visiable, setVisiable] = useState<boolean>(false);
+    const dispatch = useAppDispatch();
+    // const user = useSelector((state: any) => state.auth.user);
+    // const itemCart = useSelector((state: any) => state.cart);
+    // useEffect(() => {
+    //     AsyncStorage.setItem(`cart-user-${user.id}`, JSON.stringify(itemCart));
+    //     console.log('lưu vào storage');
+    // }, [dispatch, itemCart]);
 
     return (
         <>
-            <View className={`HEADER_APP px-6 flex flex-row gap-x-8 mb-2`}>
-                <Image className="w-[70px] h-[70px] rounded-xl" source={{ uri: data.avatar }} />
-                <View className="flex gap-y-4 w-[220px]">
-                    <Text numberOfLines={2} className="text-white text-2xl">{data.name}</Text>
-                    <View className="flex gap-y-1">
-                        <Text className="text-blue-400 text-sm font-bold">{data.publisher}</Text>
-                        <Text className="text-gray-400 text-sm">Mua hàng trong ứng dụng</Text>
+            <View style={styles.headerApp} className={`HEADER_APP`}>
+                <Image style={styles.logo} resizeMode="stretch" source={{ uri: data.avatar }} />
+                <View style={styles.viewNameApp} className="flex gap-y-4 flex-grow">
+                    <Text style={styles.textWhiteXL} numberOfLines={2}>{data.name}</Text>
+                    <View style={styles.viewPublisher}>
+                        <Text style={styles.textBlueSM}>{data.publisher}</Text>
+                        <Text style={styles.textGraySM}>Mua hàng trong ứng dụng</Text>
                     </View>
                 </View>
             </View>
-            <View className="RATING_APP mb-2">
+            <View style={styles.ratingApp} className="RATING_APP">
                 <ScrollView horizontal={true}>
-                    <View className="flex pl-6 justify-center items-center">
-                        <View className="flex flex-row justify-center items-center gap-x-1">
-                            <Text className="text-white text-sm">4,4</Text>
+                    <View style={styles.centerLeft}>
+                        <View style={styles.rowCenter}>
+                            <Text style={styles.textWhiteSM}>4,4</Text>
                             <ADIcon name="star" size={12} color="#0099FF" />
                         </View>
-                        <View className="flex flex-row justify-center items-center gap-x-1">
-                            <Text className="text-gray-400 text-sm">11N</Text>
-                            <Text className="text-gray-400 text-sm">bài đánh giá</Text>
+                        <View style={styles.rowCenter}>
+                            <Text style={styles.textGraySM} >11N</Text>
+                            <Text style={styles.textGraySM}>bài đánh giá</Text>
                         </View>
                     </View>
 
-                    <View className="flex justify-center items-center px-4">
-                        <View className="w-[1px] h-6 bg-gray-400" />
+                    <View style={styles.centerPX4} className="flex justify-center items-center px-4">
+                        <View style={styles.grayColumn} />
                     </View>
 
-                    <View className="flex items-center px-5">
+                    <View style={styles.centerPX5}>
                         <MCIcon name="download-box-outline" size={22} color="#999999" />
-                        <View className="flex flex-row gap-x-1">
-                            <Text className="text-gray-400 text-sm">{data.memory}</Text>
-                            <Text className="text-gray-400 text-sm">MB</Text>
+                        <View style={styles.rowGapX4}>
+                            <Text style={styles.textGraySM}>{data.memory}</Text>
+                            <Text style={styles.textGraySM}>MB</Text>
                         </View>
                     </View>
 
-                    <View className="flex justify-center items-center px-4">
-                        <View className="w-[1px] h-6 bg-gray-400" />
+                    <View style={styles.centerPX4}>
+                        <View style={styles.grayColumn} />
                     </View>
 
-                    <View className="flex flex-1 justify-center items-center">
+                    <View style={styles.centerFlex1}>
                         <Pressable onPress={() => { console.log('Modal'); setVisiable(true); }}>
-                            <View className="flex flex-row justify-center mb-1">
-                                <View className="flex flex-row bg-white px-[2px]">
-                                    <Text className="text-black text-sm font-bold">{data.age}+</Text>
+                            <View style={styles.rowCenterMB}>
+                                <View style={styles.rowWhite}>
+                                    <Text style={styles.textBlackSMBold}>{data.age}+</Text>
                                 </View>
                             </View>
-                            <View className="flex flex-row items-center gap-x-1">
+                            <View style={styles.rowItemGap}>
                                 <Text className="text-gray-400 text-sm">{data.age} tuổi trở lên</Text>
                                 <FIcon name="info" size={12} color="#999999" />
                                 <Modal
@@ -87,23 +99,151 @@ export default function HeaderGame({ data }: { data: IData }) {
                         </Pressable>
                     </View>
 
-                    <View className="flex justify-center items-center px-4">
-                        <View className="w-[1px] h-6 bg-gray-400" />
+                    <View style={styles.centerPX4}>
+                        <View style={styles.grayColumn} />
                     </View>
 
-                    <View className="flex justify-center items-center gap-y-1 pr-4">
-                        <Text className="text-white">Hơn 100 N</Text>
-                        <Text className="text-gray-400 text-xs">Lượt tải xuống</Text>
+                    <View style={styles.centerGapYPR}>
+                        <Text style={styles.textWhite}>Hơn 100 N</Text>
+                        <Text style={styles.textGrayXS}>Lượt tải xuống</Text>
                     </View>
 
                 </ScrollView>
             </View>
 
             <View className="INSTALL_APP px-4">
-                <TouchableHighlight onPress={() => console.log('Cài đặt!')} underlayColor="#99FFFF" className="bg-blue-300 rounded-full py-3 flex justify-center items-center">
+                <TouchableHighlight onPress={() => dispatch(addToCart(data))} underlayColor="#99FFFF" className="bg-blue-300 rounded-full py-3 flex justify-center items-center">
                     <Text>Cài đặt</Text>
                 </TouchableHighlight>
             </View>
         </>
+
     );
 }
+
+export const styles = StyleSheet.create({
+    textGrayXS: {
+        color: '#9ca3af',
+        fontSize: 12,
+        lineHeight: 16,
+    },
+    textWhite: {
+        color: '#fff',
+    },
+    centerGapYPR: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        rowGap: 4,
+        paddingRight: 16,
+    },
+    rowItemGap: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        columnGap: 4,
+    },
+    textBlackSMBold: {
+        color: '#000',
+        fontSize: 14,
+        lineHeight: 20,
+        fontWeight: 700,
+    },
+    rowWhite: {
+        display: 'flex',
+        flexDirection: 'row',
+        backgroundColor: '#fff',
+        paddingHorizontal: 2,
+    },
+    rowCenterMB: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: 4,
+    },
+    centerFlex1: {
+        display: 'flex',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    rowGapX4: {
+        display: 'flex',
+        flexDirection: 'row',
+        columnGap: 4,
+    },
+    centerPX5: {
+        display: 'flex',
+        alignItems: 'center',
+        paddingHorizontal: 20,
+    },
+    grayColumn: {
+        width: 1,
+        height: 24,
+        backgroundColor: '#9ca3af',
+    },
+    centerPX4: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: 16,
+    },
+    textWhiteSM: {
+        color: '#fff',
+        fontSize: 14,
+        lineHeight: 20,
+    },
+    rowCenter: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        columnGap: 4,
+    },
+    centerLeft: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingLeft: 24,
+    },
+    ratingApp: {
+        marginBottom: 8,
+    },
+    textGraySM: {
+        color: '#9ca3af',
+        fontSize: 14,
+        lineHeight: 20,
+    },
+    textBlueSM: {
+        color: '#60a5fa',
+        fontSize: 14,
+        lineHeight: 20,
+        fontWeight: '700',
+    },
+    viewPublisher: {
+        display: 'flex',
+        rowGap: 4,
+    },
+    textWhiteXL: {
+        color: '#fff',
+        fontSize: 24,
+        lineHeight: 32,
+    },
+    viewNameApp: {
+        display: 'flex',
+        rowGap: 16,
+        flexGrow: 1,
+    },
+    logo: {
+        width: screenWidth * 3 / 12,
+        height: 100,
+        borderRadius: 12,
+    },
+    headerApp: {
+        paddingHorizontal: 24,
+        display: 'flex',
+        flexDirection: 'row',
+        columnGap: 24,
+        marginBottom: 8,
+    },
+})

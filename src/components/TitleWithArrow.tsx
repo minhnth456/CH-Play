@@ -4,9 +4,10 @@ import EIcon from 'react-native-vector-icons/Entypo';
 import FIcon from 'react-native-vector-icons/Feather';
 
 
-const TitleWithArrow = ({ title, className, icon, eIcon, adv }: { title: string, className?: string, icon?: string, eIcon?: boolean, adv?: boolean }) => {
+const TitleWithArrow = ({ title, className, style, icon, eIcon, adv }: { title: string, className?: string, style?: any, icon?: string, eIcon?: boolean, adv?: boolean }) => {
     const getViewStyle = (pressed: boolean) => ({
         backgroundColor: pressed ? '#374151' : 'transparent',
+        ...style,
     });
     const getAnimatedViewStyle = (pressed: boolean) => ({
         width: 30,

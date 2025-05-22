@@ -3,35 +3,21 @@ import { Controller, useForm } from 'react-hook-form';
 import { Animated, Dimensions, Image, Keyboard, KeyboardAvoidingView, Platform, Pressable, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import PressItems from '../components/PressItems';
-import axios from 'axios';
-import Toast from 'react-native-toast-message';
-import { useAuth } from '../Contexts/AuthContext';
+import { signIn } from '../reducers/authSlice';
+import { useAppDispatch } from '../store/store';
+import { useSelector } from 'react-redux';
 
 const screenWidth = Dimensions.get('window').width;
 
 export default function SignInScreen({ navigation }: { navigation: any }) {
-    const { loginUser } = useAuth();
+    const dispatch = useAppDispatch();
+    const error = useSelector((state: any) => state.auth.error);
     const { control, handleSubmit, formState: { errors } } = useForm();
+
     const onSubmit = async (value: any) => {
+        // console.log(value);
         Keyboard.dismiss();
-        try {
-            const response = await axios.post(`http://192.168.10.5:3000/signin`, value);
-            if (response.status === 200) {
-                Toast.show({
-                    type: 'success',
-                    text1: 'Thành công',
-                    text2: 'Đăng nhập thành công',
-                });
-                loginUser(response.data);
-            }
-        } catch (error: any) {
-            Toast.show({
-                type: 'error',
-                text1: 'Lỗi đăng nhập',
-                text2: error.response.data,
-            });
-            console.log('Lỗi đăng nhập', error.message);
-        }
+        dispatch(signIn(value));
     };
 
     const emailLine = useRef(new Animated.Value(0)).current;
@@ -52,6 +38,13 @@ export default function SignInScreen({ navigation }: { navigation: any }) {
             useNativeDriver: false,
         }).start();
     };
+
+    if (error) {
+        console.log(error);
+        // return (
+        //     <Text>...Lỗi</Text>
+        // )
+    }
 
     return (
         <View className="flex flex-1 justify-center items-center bg-white">
