@@ -1,0 +1,555 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Đấu Trường Chân Lý",
+      "categories": [
+        "Chiến thuật",
+        "Nhập vai"
+      ],
+      "rate": 3.4,
+      "memory": 342,
+      "banner": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXhyunJiowfck97wjgeZAXXWgkG_eHqEuwVg&s",
+      "avatar": "https://play-lh.googleusercontent.com/PLx2ix32nPc3DojKLwZrFXFxLOd-OVy-UZyJHxtXuNk__hHborCTMT11IGY6ete6Sw",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXhyunJiowfck97wjgeZAXXWgkG_eHqEuwVg&s",
+        "https://vinhpici.vn/wp-content/uploads/anh-game-Dau-Truong-Chan-Ly.webp",
+        "https://cdn.tgdd.vn/News/1558003/1-1280x720.jpg"
+      ],
+      "publisher": "ONIC STUDIO",
+      "age": 12,
+      "totalDownload": 100,
+      "desc": "Huyền Thoại Tái Sinh - Hành động, Phiêu lưu, Thế giới mở",
+      "tags": [
+        "#9 miễn phí phổ biến trong chiến thuật",
+        "Chiến thuật",
+        "Nhập vai",
+        "Hành động",
+        "Nuôi",
+        "Trình mô phỏng chiến thuật",
+        "Chiến đấu thực"
+      ],
+      "comments": [
+        {
+          "id": "12jvaj",
+          "avatar": "https://play-lh.googleusercontent.com/PLx2ix32nPc3DojKLwZrFXFxLOd-OVy-UZyJHxtXuNk__hHborCTMT11IGY6ete6Sw",
+          "name": "Hoàng Minh",
+          "rate": 4,
+          "rateComment": "Ứng dụng tiện lợi, liên kết với điện thoại và máy tính dễ dàng, dễ sử dụng. Giúp mình rất nhiều trong công việc và các bài thuyết trình trên trường. Cảm ơn nhà phát triển Canva đã tạo ra một ứng dụng tốt như này",
+          "useFul": 2,
+          "date": "2025-05-06"
+        },
+        {
+          "id": "7adt8a7f",
+          "avatar": "https://image.winudf.com/v2/image1/Y29tLmtpbmcuY2FuZHljcnVzaHNhZ2FfaWNvbl8xNjExMTM3NzQwXzA0Nw/icon.png?w=184&fakeurl=1",
+          "name": "Nguyễn Khánh",
+          "rate": 3,
+          "rateComment": "Ứng dụng tiện lợi, liên kết với điện thoại và máy tính dễ dàng, dễ sử dụng. Giúp mình rất nhiều trong công việc và các bài thuyết trình trên trường. Cảm ơn nhà phát triển Canva đã tạo ra một ứng dụng tốt như này",
+          "useFul": 8,
+          "date": "2025-05-10"
+        },
+        {
+          "id": "9bvcxw",
+          "avatar": "https://play-lh.googleusercontent.com/dBuSTyWiVpBorN1wVqeGt6ux7Mva1XW-aczgcoFI-pi4HcbJu8nFDrBRwl5b4_AdMnKo",
+          "name": "Trần Văn Hùng",
+          "rate": 5,
+          "rateComment": "Ứng dụng rất tuyệt vời, giao diện thân thiện và dễ sử dụng. Tôi đã giới thiệu cho nhiều bạn bè và họ cũng rất thích.",
+          "useFul": 15,
+          "date": "2025-06-01"
+        },
+        {
+          "id": "4mnbvc",
+          "avatar": "https://static.wikia.nocookie.net/sonic/images/1/1c/SonicDashIcon.png/revision/latest?cb=20211101230821",
+          "name": "Lê Thị Mai",
+          "rate": 2,
+          "rateComment": "Ứng dụng còn nhiều lỗi, đôi khi bị treo và không phản hồi. Mong nhà phát triển cải thiện trong các bản cập nhật sau.",
+          "useFul": 5,
+          "date": "2025-06-15"
+        },
+        {
+          "id": "5qwert",
+          "avatar": "https://play-lh.googleusercontent.com/TqQ112fN13DsYp8hTCBCHWXTkGgnVuSIQ79Wo8nlb6mm6Lq0qMsmXZcVWP-xTd37iLo=w526-h296-rw",
+          "name": "Phạm Quốc Anh",
+          "rate": 4,
+          "rateComment": "Ứng dụng rất hữu ích, nhưng cần thêm một số tính năng mới để hoàn thiện hơn. Hy vọng sẽ có bản cập nhật sớm.",
+          "useFul": 10,
+          "date": "2025-07-01"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Candy Crush Saga",
+      "categories": [
+        "Giải trí",
+        "Puzzle"
+      ],
+      "rate": 4,
+      "memory": 342,
+      "banner": "https://www.osttopstsoftware.net/wp-content/uploads/2023/05/candy-crush-saga-mod-mien-phi-e1685330030429.png",
+      "avatar": "https://image.winudf.com/v2/image1/Y29tLmtpbmcuY2FuZHljcnVzaHNhZ2FfaWNvbl8xNjExMTM3NzQwXzA0Nw/icon.png?w=184&fakeurl=1",
+      "images": [
+        "https://www.king.com/media/r3dbpf3e/candycrush.webp?width=1200&height=627&v=133867610452900000&format=webp&quality=85",
+        "https://thanhnien.mediacdn.vn/Uploaded/game/st.game.thanhnien.com.vn/image/TNGame/012014/22/candy-crush-logo.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCXgk2RoFjalpuwLGw_YXk_Ml9HWt7b42cE9biK6Vbrhq4EzUMgtltG3QdmK06tmiWSz0&usqp=CAU",
+        "https://i.ytimg.com/vi/mwJfB2aPX20/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA3pnSUFy4PxqbczLW9P5B6R7_h8Q"
+      ],
+      "publisher": "King",
+      "age": 3,
+      "totalDownload": 5000000,
+      "desc": "Trò chơi giải đố hấp dẫn với hàng triệu người chơi trên toàn thế giới.",
+      "tags": [
+        "Puzzle",
+        "Giải trí",
+        "Thư giãn"
+      ],
+      "comments": [
+        {
+          "id": "c1",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Nguyễn Văn A",
+          "rate": 5,
+          "rateComment": "Trò chơi rất thú vị và gây nghiện. Tôi chơi hàng giờ mà không chán.",
+          "useFul": 12,
+          "date": "2025-08-01"
+        },
+        {
+          "id": "c2",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Trần Thị B",
+          "rate": 4,
+          "rateComment": "Game hay nhưng cần thêm nhiều màn chơi mới.",
+          "useFul": 8,
+          "date": "2025-08-05"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Roblox VN",
+      "categories": [
+        "Phiêu lưu",
+        "Sáng tạo"
+      ],
+      "rate": 5,
+      "memory": 342,
+      "banner": "https://play-lh.googleusercontent.com/tQvSzjkXZulkdjNoOwB1-0NeADzzAGsF9FZyxoReTlkjsVkUdsWaiLyzimS6jQybWg=w526-h296-rw",
+      "avatar": "https://play-lh.googleusercontent.com/2mU6rTrej9vlSw3AN-b3mWmetI1gfPWOM4f-WzgR-iqLqSn0k0KvAABDFfX87jwXL1a1",
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsHkgKfWIzhiZCkQUNc2-Y7Y19OTDT-ivsQ&s",
+        "https://i.ytimg.com/vi/eRuqF-OBTh8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDlRMVj6e5MEZl9Kmd6VQlDkLMblg",
+        "https://img.zing.vn/products/robloxs/submit_store/prod/src/frame1/images/bg_pc.jpg",
+        "https://staticg.sportskeeda.com/editor/2022/12/e0ead-16706086124276-1920.jpg?w=640"
+      ],
+      "publisher": "Roblox Corporation",
+      "age": 7,
+      "totalDownload": 10000000,
+      "desc": "Nền tảng sáng tạo và phiêu lưu với hàng triệu trò chơi do người dùng tạo.",
+      "tags": [
+        "Sáng tạo",
+        "Phiêu lưu",
+        "Thế giới mở"
+      ],
+      "comments": [
+        {
+          "id": "c3",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Lê Văn C",
+          "rate": 5,
+          "rateComment": "Tôi thích sự sáng tạo không giới hạn trong Roblox. Rất tuyệt vời!",
+          "useFul": 20,
+          "date": "2025-08-10"
+        },
+        {
+          "id": "c9",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Nguyễn Thị D",
+          "rate": 4,
+          "rateComment": "Roblox rất thú vị, nhưng cần cải thiện tốc độ tải game.",
+          "useFul": 15,
+          "date": "2025-08-15"
+        },
+        {
+          "id": "c10",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Trần Văn E",
+          "rate": 5,
+          "rateComment": "Tôi đã chơi Roblox nhiều năm và vẫn rất yêu thích nó.",
+          "useFul": 18,
+          "date": "2025-08-20"
+        },
+        {
+          "id": "c11",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Phạm Thị F",
+          "rate": 3,
+          "rateComment": "Game hay nhưng đôi khi gặp lỗi kết nối.",
+          "useFul": 10,
+          "date": "2025-08-25"
+        },
+        {
+          "id": "c12",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Hoàng Văn G",
+          "rate": 4,
+          "rateComment": "Roblox có nhiều trò chơi thú vị, nhưng cần thêm hướng dẫn cho người mới.",
+          "useFul": 12,
+          "date": "2025-08-30"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Zombie Tsunami",
+      "categories": [
+        "Hành động",
+        "Vui nhộn"
+      ],
+      "rate": 4.1,
+      "memory": 342,
+      "banner": "https://cdn6.aptoide.com/imgs/0/6/a/06a66e43a910d88dc03659ee50201dbd_fgraphic.png",
+      "avatar": "https://play-lh.googleusercontent.com/y2v9w4KjUe4djmd3yYgj2_XrDIt_D9JO2c2NkYdxtYyE6cGl21JgU4aMqTEcoQzQorLD",
+      "images": [
+        "https://cdn6.aptoide.com/imgs/0/6/a/06a66e43a910d88dc03659ee50201dbd_fgraphic.png",
+        "https://res09.bignox.com/appcenter/vn/2020/09/81c01PqBLDL.jpg",
+        "https://st.gamevui.vn/images/image/2019/10/31/zombie-tsunami-640.jpg",
+        "https://thanhnien.mediacdn.vn/Uploaded/game/st.game.thanhnien.com.vn/image/151/March-2014/24/thanh-nien-game-mobile-zombie-tsunami-21.png",
+        "https://imag.malavida.com/mvimgbig/download-fs/zombie-tsunami-14301-4.jpg"
+      ],
+      "publisher": "Mobigame",
+      "age": 10,
+      "totalDownload": 2000000,
+      "desc": "Trò chơi hành động vui nhộn với lối chơi độc đáo.",
+      "tags": [
+        "Hành động",
+        "Vui nhộn",
+        "Zombie"
+      ],
+      "comments": [
+        {
+          "id": "c4",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Phạm Thị D",
+          "rate": 4,
+          "rateComment": "Game rất vui nhưng cần thêm nhiều chế độ chơi mới.",
+          "useFul": 5,
+          "date": "2025-08-15"
+        },
+        {
+          "id": "c13",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Nguyễn Văn K",
+          "rate": 5,
+          "rateComment": "Trò chơi rất thú vị và đồ họa đẹp mắt.",
+          "useFul": 8,
+          "date": "2025-08-20"
+        },
+        {
+          "id": "c14",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Lê Thị H",
+          "rate": 3,
+          "rateComment": "Game ổn nhưng cần cải thiện tốc độ tải.",
+          "useFul": 3,
+          "date": "2025-08-25"
+        },
+        {
+          "id": "c15",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Trần Văn M",
+          "rate": 4,
+          "rateComment": "Tôi thích trò chơi này, nhưng cần thêm nhiều thử thách hơn.",
+          "useFul": 6,
+          "date": "2025-08-30"
+        },
+        {
+          "id": "c16",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Hoàng Thị N",
+          "rate": 5,
+          "rateComment": "Game rất tuyệt vời, tôi sẽ giới thiệu cho bạn bè.",
+          "useFul": 10,
+          "date": "2025-09-01"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Angry Birds",
+      "categories": [
+        "Chiến thuật",
+        "Thú cưng"
+      ],
+      "rate": 5,
+      "memory": 342,
+      "banner": "https://store-images.s-microsoft.com/image/apps.29817.14410076060135429.59ab4cac-af92-4304-9592-2c4cb1a9ab81.c5cfdad6-98cd-443d-9bca-ee6f386152c4",
+      "avatar": "https://upload.wikimedia.org/wikipedia/en/2/2d/Angry_Birds_promo_art.png",
+      "images": [
+        "https://images2.thanhnien.vn/528068263637045248/2023/2/22/angry-1677040034212184278822.jpg",
+        "https://store-images.s-microsoft.com/image/apps.29817.14410076060135429.59ab4cac-af92-4304-9592-2c4cb1a9ab81.c5cfdad6-98cd-443d-9bca-ee6f386152c4",
+        "https://hoanghamobile.com/tin-tuc/wp-content/uploads/2023/02/Angry-Birds-se-bi-xoa-khoi-CH-Play-vao-ngay-23-thang-2.jpg",
+        "https://cdn.tgdd.vn/Files/2022/10/10/1476578/cach-tai-va-choi-angry-birds-journey5_1280x720-800-resize.jpg"
+      ],
+      "publisher": "ANGRY STUDIO",
+      "age": 12,
+      "totalDownload": 3000000,
+      "desc": "Trò chơi chiến thuật với các thần thú đáng yêu.",
+      "tags": [
+        "Chiến thuật",
+        "Thú cưng",
+        "Phiêu lưu"
+      ],
+      "comments": [
+        {
+          "id": "c5",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Nguyễn Văn E",
+          "rate": 5,
+          "rateComment": "Game rất hay, tôi thích các thần thú trong trò chơi.",
+          "useFul": 10,
+          "date": "2025-08-20"
+        },
+        {
+          "id": "c17",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Lê Thị O",
+          "rate": 4,
+          "rateComment": "Game rất thú vị, nhưng cần thêm nhiều màn chơi mới.",
+          "useFul": 8,
+          "date": "2025-08-25"
+        },
+        {
+          "id": "c18",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Trần Văn P",
+          "rate": 3,
+          "rateComment": "Game ổn nhưng đôi khi gặp lỗi kết nối.",
+          "useFul": 5,
+          "date": "2025-08-30"
+        },
+        {
+          "id": "c19",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Phạm Thị Q",
+          "rate": 5,
+          "rateComment": "Tôi rất thích trò chơi này, đồ họa rất đẹp và lối chơi hấp dẫn.",
+          "useFul": 12,
+          "date": "2025-09-01"
+        },
+        {
+          "id": "c20",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Hoàng Văn R",
+          "rate": 4,
+          "rateComment": "Game rất tốt, nhưng cần cải thiện tốc độ tải.",
+          "useFul": 7,
+          "date": "2025-09-05"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "SoulKnight",
+      "categories": [
+        "Hành động",
+        "RPG"
+      ],
+      "rate": 4.3,
+      "memory": 342,
+      "banner": "https://play-lh.googleusercontent.com/TqQ112fN13DsYp8hTCBCHWXTkGgnVuSIQ79Wo8nlb6mm6Lq0qMsmXZcVWP-xTd37iLo=w526-h296-rw",
+      "avatar": "https://images.sftcdn.net/images/t_app-icon-m/p/910260a4-5ff5-11e8-a656-0242ac120007/429060019/soul-knight-logo",
+      "images": [
+        "https://play-lh.googleusercontent.com/uubY0SfGsXn50EjPGt57aUWArVfGZStp_G03ESMLdoAlL_agjilI8yc1z9EwwJ50dA=w526-h296-rw",
+        "https://play-lh.googleusercontent.com/TqQ112fN13DsYp8hTCBCHWXTkGgnVuSIQ79Wo8nlb6mm6Lq0qMsmXZcVWP-xTd37iLo=w526-h296-rw",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqVlcR2gZES7deLosge7sVTraLtPJq9P4MLg&s",
+        "https://static.wikia.nocookie.net/skvn/images/0/0e/LivingRoomUpdateOnly.png/revision/latest/scale-to-width-down/680?cb=20190715134604&path-prefix=vi"
+      ],
+      "publisher": "ChillyRoom",
+      "age": 10,
+      "totalDownload": 4000000,
+      "desc": "Trò chơi hành động RPG với lối chơi hấp dẫn.",
+      "tags": [
+        "Hành động",
+        "RPG",
+        "Phiêu lưu"
+      ],
+      "comments": [
+        {
+          "id": "c6",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Trần Văn F",
+          "rate": 4,
+          "rateComment": "Game rất thú vị nhưng cần cải thiện đồ họa.",
+          "useFul": 7,
+          "date": "2025-08-25"
+        },
+        {
+          "id": "c21",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Nguyễn Thị H",
+          "rate": 5,
+          "rateComment": "Tôi rất thích trò chơi này, lối chơi rất hấp dẫn.",
+          "useFul": 12,
+          "date": "2025-08-30"
+        },
+        {
+          "id": "c22",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Lê Văn I",
+          "rate": 3,
+          "rateComment": "Game ổn nhưng cần thêm nhiều tính năng mới.",
+          "useFul": 5,
+          "date": "2025-09-01"
+        },
+        {
+          "id": "c23",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Phạm Thị J",
+          "rate": 4,
+          "rateComment": "Trò chơi rất thú vị, tôi sẽ giới thiệu cho bạn bè.",
+          "useFul": 8,
+          "date": "2025-09-05"
+        },
+        {
+          "id": "c24",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Hoàng Văn K",
+          "rate": 5,
+          "rateComment": "Game rất tuyệt vời, tôi chơi hàng giờ mà không chán.",
+          "useFul": 15,
+          "date": "2025-09-10"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Where's my water?",
+      "categories": [
+        "Puzzle",
+        "Giải trí"
+      ],
+      "rate": 4.3,
+      "memory": 342,
+      "banner": "https://play-lh.googleusercontent.com/Bwop6Enpam1B7ZZ7z2AWGOJXF-GOBGXJvydT-1D1keNbAJ5jdvZrTTGpZL7CeBM1Gjs=w526-h296-rw",
+      "avatar": "https://play-lh.googleusercontent.com/dBuSTyWiVpBorN1wVqeGt6ux7Mva1XW-aczgcoFI-pi4HcbJu8nFDrBRwl5b4_AdMnKo",
+      "images": [
+        "https://play-lh.googleusercontent.com/Bwop6Enpam1B7ZZ7z2AWGOJXF-GOBGXJvydT-1D1keNbAJ5jdvZrTTGpZL7CeBM1Gjs=w526-h296-rw",
+        "https://photo2.tinhte.vn/data/attachment-files/2024/01/8233080_dap-an-game-where-s-my-water-2.png",
+        "https://i.ytimg.com/vi/XCzxj3300pk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAQcaVbtxpZqYFiDIrRVAOchGx_Zw"
+      ],
+      "publisher": "Disney",
+      "age": 3,
+      "totalDownload": 6000000,
+      "desc": "Trò chơi giải đố thú vị với chú cá sấu đáng yêu.",
+      "tags": [
+        "Puzzle",
+        "Giải trí",
+        "Thư giãn"
+      ],
+      "comments": [
+        {
+          "id": "c7",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Lê Thị G",
+          "rate": 5,
+          "rateComment": "Game rất dễ thương và phù hợp với trẻ em.",
+          "useFul": 15,
+          "date": "2025-08-30"
+        },
+        {
+          "id": "c8",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Nguyễn Văn H",
+          "rate": 4,
+          "rateComment": "Trò chơi rất thú vị, nhưng cần thêm nhiều màn chơi mới.",
+          "useFul": 10,
+          "date": "2025-09-01"
+        },
+        {
+          "id": "c9",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Trần Thị I",
+          "rate": 3,
+          "rateComment": "Game ổn nhưng đôi khi gặp lỗi kết nối.",
+          "useFul": 8,
+          "date": "2025-09-05"
+        },
+        {
+          "id": "c10",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Phạm Văn J",
+          "rate": 5,
+          "rateComment": "Tôi rất thích trò chơi này, đồ họa rất đẹp và lối chơi hấp dẫn.",
+          "useFul": 12,
+          "date": "2025-09-10"
+        },
+        {
+          "id": "c11",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Hoàng Thị K",
+          "rate": 4,
+          "rateComment": "Game rất tốt, nhưng cần cải thiện tốc độ tải.",
+          "useFul": 9,
+          "date": "2025-09-15"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Sonic Dash",
+      "categories": [
+        "Hành động",
+        "Chạy vô tận"
+      ],
+      "rate": 4.3,
+      "memory": 342,
+      "banner": "https://i.ytimg.com/vi/Nndnn_RRwjY/maxresdefault.jpg",
+      "avatar": "https://static.wikia.nocookie.net/sonic/images/1/1c/SonicDashIcon.png/revision/latest?cb=20211101230821",
+      "images": [
+        "https://i.ytimg.com/vi/Nndnn_RRwjY/maxresdefault.jpg",
+        "https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/2024_2_26_638445603990915460_sonic-dash.jpg",
+        "https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/177182/Originals/Sonic-Dash-13.jpg"
+      ],
+      "publisher": "SEGA",
+      "age": 7,
+      "totalDownload": 7000000,
+      "desc": "Trò chơi chạy vô tận với nhân vật Sonic nổi tiếng.",
+      "tags": [
+        "Hành động",
+        "Chạy vô tận",
+        "Thử thách"
+      ],
+      "comments": [
+        {
+          "id": "c8",
+          "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS-_lB_YIKaaPz_vciNdT2ebnlUl6gJE5kBQ&s",
+          "name": "Phạm Văn H",
+          "rate": 4,
+          "rateComment": "Game rất thú vị nhưng cần thêm nhiều nhân vật mới.",
+          "useFul": 9,
+          "date": "2025-09-01"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "email": "minh@gmail.com",
+      "password": "$2a$10$uZDaST.IbtuVO4K9BwNB5.bFOScbNJGzqBZxoPt55gu8O1rJVYZ4C",
+      "confirmPassword": "",
+      "id": 1
+    },
+    {
+      "email": "minh2@gmail.com",
+      "password": "$2a$10$WvRsmExQJzTGcpNEJ4kRle80k/vw5MpqkpB8Q5RHK8F9YCsOr89Hm",
+      "confirmPassword": "",
+      "id": 2
+    },
+    {
+      "email": "minh3@gmail.com",
+      "password": "$2a$10$HNFBdv5ZDGojVWNVh0HbxeAiQNfTyKU/twRhZupJGeHjeD.ih67xa",
+      "confirmPassword": "",
+      "id": 3
+    }
+  ]
+}
